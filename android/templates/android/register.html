@@ -1,0 +1,14 @@
+{% extends 'android/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<h1> Subscription Form </h1>
+<div class="container">
+<form method="post" action="">
+   {% csrf_token %}
+   {% bootstrap_form_errors form layout="inline" %}
+   {% bootstrap_form form layout="inline" %}
+   {% bootstrap_button "Subscribe" button_type="submit" %}
+</form>
+</div>
+
+{% endblock %}
