@@ -131,11 +131,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 PHONE_VERIFICATION = {
-    'BACKEND': 'accounts.backends.VoicegateBackend',
+    'BACKEND': 'accounts.backends.SmsToBackend',
     'OPTIONS': {
         'url': env('SmsUrl'),
-        'secret': env('secret'),
-        'username': env('username'),
+        'token': env('token'),
     },
     'TOKEN_LENGTH': 6,
     'MESSAGE': 'Welcome to {app}! Please use security code {security_code} to proceed.',
